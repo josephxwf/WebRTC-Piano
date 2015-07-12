@@ -1,0 +1,12 @@
+{
+  "name": "NodeOpenTok",
+  "version": "0.0.3",
+  "dependencies": {
+    "express": "^4.0.0",
+    "body-parser":"*",
+    "opentok": "^2.2",
+    "ejs": "^1.0.0",
+    "redis": ">=0.10.1",
+    "cors": "^2.2.0"
+  }
+}

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Piano++</title>
+  <% include _header %>
+</head>
+<body>
+  <div id="logoContainer"></div>
+
+  <div class="container">
+<div id="insideContainer">
+  <a href="http://tokbox.com/?utm_source=opentokrtc&utm_medium=web&utm_campaign=webrtc">
+    <img src="/img/opentokLogo.png" alt="opentok transparent logo" id="opentokLogo" />
+  </a>
+  
+  <% if(error) {%>
+    <%= error %>
+  <% }else{ %>
+    <% if(archive.url) {%>
+      <h1>OpenTok Archive: <%= archive.name %></h1>
+
+      <div id="roomContainer">
+        <video id="archiveVideo" src="<%= archive.url %>" autoplay="" controls="true"></video>
+        <br>
+        <br>
+
+        <a href="<%= archive.url %>" id="submitButton" class="actionButton" download>Download</a>
+      </div>
+    <% }else{ %>
+      <p>Archive is not ready. Please check back in a few minutes.</p>
+      <p>Archive ID: <%= archive.id %></p>
+    <% } %>
+
+  <% } %>
+
+</div>
+  </div>
+
+  <% include _vendor %>
+  <link rel="stylesheet" href="/css/index.css" />
+  <script src="/js/index.js" type="text/javascript"></script>
+  <script>
+    var video = document.getElementById('archiveVideo');
+    video.addEventListener('loadedmetadata', function(){
+      verticalCenter();
+    });
+  </script>
+  <% include _analytics %>
+</body>
+</html>

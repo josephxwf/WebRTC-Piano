@@ -1,0 +1,142 @@
+/*
+ * Mixins
+ */
+
+@mixin radialBackground( $to, $from ){
+  background:$from no-repeat center center fixed; /* Old browsers */
+  background-image: radial-gradient(circle at 50% 50%, $from, $to);
+  background-image: -webkit-radial-gradient(50% 50%, circle, $from, $to);
+  background-image: -moz-radial-gradient(50% 50%, circle, $from, $to);
+  background-image: -ms-radial-gradient(50% 50%, circle, $from, $to);
+  background-image: -o-radial-gradient(50% 50%, circle, $from, $to);
+}
+
+/*
+ * Normalize variables
+ */
+$legacy-support-for-ie7 : false;
+$legacy-support-for-ie6 : false;
+
+$base-font-family : "AvantGardeGothicITCW01X", 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$avantFont: "AvantGardeGothicITCW01X";
+$avantFontBold: "AvantGardeGothicITCW01B 731069";
+/*
+ * Bootstrap variables
+ */
+$zindexModalBackdrop : 1040;
+$zindexModal : 1050;
+$baseLineHeight : 20px;
+$black : #000;
+$white : #fff;
+$app_width : 1160px;
+$app_height : 860px;
+
+$stage_width : 1080px;
+$stage_height : 730px;
+$stage_border : 6px;
+$stage_left : (.5 * ($app_width - $stage_width)) - $stage_border;
+$stage_top : 95px;
+
+$gutter_width : (1160px - 1080px) / 2;
+
+
+/*
+ * Colors
+ */
+
+//index page
+$darkBrown: #1e1916;
+$lightBrown: #433931;
+//$tb_blue: rgb(117,180,200);
+//$tb_blue: #46869d;
+$tb_blue: #5598b0;
+
+$blue_lt: rgb(82,158,200);
+$blue_med: rgb(58,126,166);
+$blue_dark: rgb(32,94,130);
+$blue_extra_dark: rgb(31,52,67);
+
+$blue_overlay: rgba(58,126,166,0.75);
+//$blue_overlay: rgba(32,94,130,0.75);
+
+$blue_lt2: #87c1d2;
+
+
+// Theme
+
+$pink : #1ba3dd;
+$warm-gray : #F2F2EC;
+$dark-gray : #444;
+
+// Element Properties
+
+$backgroundColor : $warm-gray;
+$backgroundContrastColor : desaturate(darken($backgroundColor, 9%), 3%);
+
+$btnTextColor : white;
+$btnBackgroundColor: $pink;
+$btnHoverBackgroundColor : $dark-gray;
+$btnShadowColor : rgba(0,0,0,0.3);
+
+$hdrColor: $pink;
+$hdrContrastColor: $white;
+
+$inputInnerShadowColor : $btnShadowColor;
+
+$roomShadowColor: black;
+$roomBackgroundColor: white;
+$roomBorderColor: $pink;
+
+$roomAccentColor: $pink;
+
+$overlayBlockingColor: rgba(0, 0, 0, 0.95);
+
+$chatInputColor: $dark-gray;
+
+/*
+ * Layout
+ */
+$fixedPageWidth : 940px;
+
+
+$light-gray : #999;
+
+/*
+ * Elements
+ */
+$chatRoomWidth: 400px;
+$roomTitleHeight: 75px;
+$roomTitleSize: 25px;
+@mixin info-circle($width:20px, $bordersize:3px, $colorstyle:dark) {
+  $bgcolor: $blue_extra_dark;
+  $bordercolor: $blue_lt;
+  $arrow_fill: #fff;
+  @if $colorstyle == dark {
+    $bgcolor: $blue_extra_dark;
+    $bordercolor: $blue_lt;
+  }
+  @else if $colorstyle == light {
+    $bgcolor: $blue_lt;
+    $bordercolor: $blue_lt2;
+  }
+  @else if $colorstyle == white {
+    $bgcolor: #fff;
+    $bordercolor: $blue_lt2;
+    $arrow_fill: $blue_med;
+  }
+  position: absolute;
+  width: $width;
+  height: $width;
+  border-radius: $width / 2 + $bordersize;
+  background-color: $bgcolor;
+  border: solid $bordersize $bordercolor;
+  cursor: pointer;
+  img {
+    width: $width * 0.5;
+    height: $width * 0.5;
+    position: absolute;
+    top: $width * 0.25;
+    left: $width * 0.25;
+  }
+  
+}

@@ -1,0 +1,140 @@
+@import "../../vendors/bourbon/bourbon";
+@import "../../vendors/css-arrow";
+@import "global";
+
+body {
+  font-family: 'Muli';
+  font-weight: 300;
+  color: #fff;
+}
+
+
+h1, h2, h3 {
+  font-family:$avantFont;
+  font-weight: lighter;
+  b {
+    font-family: $avantFontBold;
+  }
+}
+
+h1.big {
+  font-size: 48px;
+}
+
+h1 {
+  font-size: 32px;
+}
+
+h2 {
+  font-size: 28px;
+}
+
+h3 {
+  font-size: 24px;
+}
+
+h4 {
+  font-size: 20px;
+}
+
+h5 {
+  font-size: 16px;
+}
+
+h6 {
+  font-size: 14px;
+}
+
+b {
+  font-weight: 700;
+}
+
+a {
+  color: #003F5F;
+}
+p {
+  font-size: 14px;
+  line-height: 16px;
+}
+
+.font18 {
+  font-size: 18px;
+}
+    
+    
+input, button, .btn-standard {
+  font-family: 'AvantExtraLight';
+}
+
+input[type='submit'], button, .btn-standard {
+  display: inline-block;
+  border-radius: 4px;
+  cursor: pointer;
+  border: 1px solid $blue_dark;
+  padding: 12px 40px;
+  font-weight: 300;
+  font-size: 22px;
+  text-decoration: none;
+  @include linear-gradient($blue_lt, $blue_dark);
+  background-color: $blue_med;
+  color: #fff;
+  &:hover {
+    @include linear-gradient($blue_med, $blue_med);
+  }
+  &:disabled {
+    @include linear-gradient($blue_lt, $blue_dark);
+    opacity: 0.5;
+    cursor: default;
+  }
+}
+.btn-grey {
+  @include linear-gradient(#aaa, #777);
+  border-color: #888;
+  &:hover {
+    @include linear-gradient(#999, #999);
+  }
+}
+.btn-small {
+  font-size: 16px;
+  padding: 8px 20px;
+}
+
+
+input[type="text"]{
+  border: solid 2px $blue_lt;
+  border-radius: 5px;
+  height: 58px;
+  font-size: 24px;
+}
+input.std-input-text[type="text"] {
+  display: inline-block;
+  margin: 8px 0;
+  width: 400px;
+  padding: 0 20px;
+  text-align: center;
+}
+form{
+  margin: 0;
+}
+#roomContainer form{
+  margin: 70px 0px 30px 0px;
+}
+#store_icons{
+  margin-top: 70px;
+}
+@media screen and (max-width: 885px), screen and (max-height: 656px) {
+  input[type="text"]{
+    height: 35px;
+    font-size: 14px;
+  }
+  input.std-input-text[type="text"] {
+    width: 300px;
+    padding: 0 10px;
+  }
+}
+
+
+input.error {
+  border: solid #ff0000;
+  background-color: #ffeeee;
+}

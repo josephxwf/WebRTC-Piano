@@ -1,0 +1,88 @@
+@import "variables";
+@import "base";
+@import "../../vendors/bourbon/bourbon";
+@import "../../vendors/css-arrow";
+
+
+
+html,body{
+  height:100%;
+}
+body{
+  @include radialBackground( $tb_blue, #7fbfd6 );
+  min-height: 100%;
+}
+.container{
+  width: 960px;
+  box-sizing: border-box;
+  min-height: 100%;
+  text-align:center;
+  #opentokLogo{
+    position:fixed;
+    bottom: 20px;
+    left: 20px;
+  }
+}
+body, input{
+  font-family: $avantFont;
+  color:#ffffff;
+}
+h5{
+  font-family: 'Muli';
+  font-weight: 300;
+}
+/*
+h1, h1 b{
+  font-family: $avantFont;
+  font-size:60px;
+  line-height:100%;
+  margin-top:0;
+  margin-bottom:30px;
+  text-transform:capitalize;
+  text-align:center;
+  line-height:100%;
+}
+
+h1 b{
+  font-weight: bold;
+}*/
+
+#roomContainer{
+  text-align:center;
+}
+#store_icons a#playStoreButton{
+  margin-right: 20px;
+}
+#actionItem{
+  width: 565px;
+  text-align:left;
+  margin:auto;
+}
+#submitButton{
+  color: white;
+  font-family: 'AvantGardeGothicITCW01X';
+  &:hover{
+    color: white;
+    text-decoration: none;
+  }
+}
+input{
+  vertical-align: bottom;
+}
+
+input::-webkit-input-placeholder { /* WebKit browsers */
+  line-height: 130%;
+}
+input:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+  line-height: 130%;
+}
+input::-moz-placeholder { /* Mozilla Firefox 19+ */
+  line-height: 130%;
+}
+input:-ms-input-placeholder { /* Internet Explorer 10+ */
+  line-height: 130%;
+}
+
+#infoBox{
+  margin-top: 50px;
+}

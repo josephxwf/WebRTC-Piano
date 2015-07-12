@@ -1,0 +1,243 @@
+@import "variables";
+h1,h2,h3,h4,h5,h6,p{
+  font-family: 'Muli', sans-serif;
+}
+
+.Blur video{
+  -webkit-filter: Blur(15px);
+  -moz-filter: Blur(15px);
+  filter: Blur(15px);
+}
+.Sepia video{
+  -webkit-filter: Sepia(100%);
+  -moz-filter: Sepia(100%);
+  filter: Sepia(100%);
+}
+.Grayscale video{
+  -webkit-filter: Grayscale(100%);
+  filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale"); 
+
+
+}
+.Invert video{
+  -webkit-filter: Invert(100%);
+ filter: Invert(100%);
+}
+
+
+@mixin border-shadow($size) {
+  border:$size solid #DDD;
+  box-sizing: border-box;
+  box-shadow: $size $size 3px #999 inset;
+}
+
+.popover{
+  top: -227px; 
+  left: -256px; 
+  display: block; 
+  opacity: 0.9 !important;
+  background-color: #111;
+}
+
+.popover h3.popover-title{
+  background: #000;
+  color: white; 
+  border-bottom-color: #292929;
+}
+.popover .popover-content{
+  background: #111;
+  opacity: 0.9;
+}
+.popover.top .arrow{
+  border-top: none;
+  &:after{
+    border-top-color: #111;
+  }
+}
+// generic Container
+#controlsContainer{
+  position:absolute;
+  bottom: 0px;
+  right: $chatRoomWidth;
+  left: 0px;
+  width: 100%;
+
+  .controlsHeader{
+    position: relative;
+    bottom: -1px;
+    font-size: 20px;
+    color: $dark-gray;
+    font-family: $avantFont;
+    font-weight:normal;
+
+    @include border-shadow(1px);
+    display: inline-block;
+
+    .headerOption{
+      display: inline-block;
+      font-size:25px;
+      line-height: 150%;
+      cursor: pointer;
+      padding: 0 5px;
+      background-color: rgba( 255,255,255, 0.4 );
+
+      &.selected{
+        background-color: #EEE;
+      }
+    }
+  }
+
+  .controlsBody{
+    padding-top:8px;
+    background-color:#282828;
+    padding-bottom:8px;
+    padding-left: 10px;
+
+    .optionContainer{
+      #controlOptionsRight{
+        display: inline-block;
+        position: absolute;
+        right: 0;
+        padding-top: 5px;
+      }
+      #mailButton{
+        width: 33px;
+        height: 28px;
+        right: 178px;
+        background-image: url('../img/icon_Mail.png');
+        background-repeat:no-repeat;
+        &:hover{
+          background-image: url('../img/icon_Mail_hover.png');
+        }
+      }
+      #filtersButton{
+        width: 28px;
+        height: 24px;
+        right: 130px;
+        background: url('../img/filters-icon.png');
+        &:hover{
+          background-image: url('../img/filters-icon-active.png');
+        }
+        &.selected{
+          background-image: url('../img/filters-icon-active.png');
+        }
+      }
+      #recordButton{
+        background-image:url('../img/img-archiving_normal-icon.png');
+        width: 27px;
+        height: 27px;
+        right: 85px;
+        &:hover{
+          background-image:url('../img/img-archiving_hover-icon.png');
+        }
+        &.selected{
+          background-image:url('../img/img-archiving_active-icon.png');
+        }
+      }
+      #roomLinkButton{
+        background-image:url('../img/img-link_normal-icon.png');
+        width: 28px;
+        height: 28px;
+        right: 40px;
+        &:hover{
+          background-image:url('../img/img-link_hover-icon.png');
+        }
+        &.selected{
+          background-image:url('../img/img-link_hover-icon.png');
+        }
+      }
+      #roomLinkInput{
+        width: 70%;
+      }
+      .popover{
+        width: 200px;
+        max-width: 200px;
+      }
+      .popover #filtersList li button{
+        background-color: #1ba3dd;
+        border: medium none;
+        border-spacing: 0;
+        color: #26589F;
+        margin: 0;
+        padding: 0;
+        text-align: left;
+        text-decoration: none;
+        text-indent: 0;
+        font-family: "Muli", arial;
+        padding: 5px;
+        margin: 0px 5px 0px 5px;
+        text-decoration: none;
+        color: #045564;
+        background: #ebebeb;
+        -webkit-transition: all 0.1s ease-in-out;
+        -moz-transition: all 0.1s ease-in-out;
+        -o-transition: all 0.1s ease-in-out;
+        transition: all 0.1s ease-in-out;
+        margin-bottom: 5px;
+        width: 90%;
+        text-align: center;
+        &:hover{
+          color: #fff;
+          background: #0097ca;
+        }
+      }
+      #chatButton.no-after{
+        &:after{
+          content: none;
+        }
+      }
+      #chatButton{
+        background-image:url('../img/img-chat_normal-icon.png');
+        width: 25px;
+        height: 24px;
+        right: 0px;
+        &:hover{
+          background-image:url('../img/img-chat_hover-icon.png');
+        }
+        &.selected{
+          background-image:url('../img/img-chat_active-icon.png');
+        }
+        &:after{
+          content: attr(data-unseen-count);
+          position: absolute;
+          top: -10px;
+          right: -9px;
+          padding: 0px 6px;
+          border: 2px solid white;
+          border-radius: 100px;
+          background: linear-gradient(top, #ff6969 0%, red 100%);
+          background: -webkit-linear-gradient(top, #ff6969 0%, red 100%);
+          background: -moz-linear-gradient(top, #ff6969 0%, red 100%);
+          box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5), 0 1px 4px rgba(0, 0, 0, 0.4), 0 0 1px rgba(0, 0, 0, 0.7) inset, 0 10px 0px rgba(255, 255, 255, 0.11) inset;
+          background-clip: padding-box;
+          font: bold 12px/18px "Helvetica Neue", sans-serif;
+          color: white;
+          text-decoration: none;
+          text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.6);
+          width: 6px;
+          text-align: center;
+        }
+      }
+        .option{
+          font-family: $avantFont;
+          font-size:20px;
+          line-height: 100%;
+          font-weight:normal;
+          color: $light-gray;
+          cursor:pointer;
+          display: inline-block;
+          margin-right: 10px;
+          position: absolute;
+        }
+    }
+    #filterOptions{
+      display:none;
+    }
+  }
+}
+.popover-title{
+  font-family: 'Muli', sans-serif;
+}
+.tooltip{
+  font-family: 'Muli', sans-serif;
+}
