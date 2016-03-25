@@ -43,7 +43,9 @@ loadMiddleware(app, config);
 app.get("/", function( req, res ){
   res.render('index');
 });
-
+app.get('/:bookroom', function(req, res){
+  res.render('index.ejs');
+});
 // ***
 // *** Post endpoint to start/stop archives
 // ***
