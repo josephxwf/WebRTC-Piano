@@ -44,7 +44,7 @@ app.get("/", function( req, res ){
   res.render('index');
 });
 app.get('/:bookroom', function(req, res){
-  res.render('test1.ejs');
+  res.render('test1');
 });
 // ***
 // *** Post endpoint to start/stop archives
