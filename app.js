@@ -43,7 +43,7 @@ loadMiddleware(app, config);
 app.get("/", function( req, res ){
   res.render('index');
 });
-app.get('/:bookroom', function(req, res){
+app.get('/chooseroom', function(req, res){
   res.render('test1');
 });
 // ***
