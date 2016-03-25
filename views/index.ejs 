@@ -1,16 +1,37 @@
-<!DOCTYPE HTML>
-<!--
-	Twenty by HTML5 UP   NEWNEWNEWNEWN！！！！！！！！！！！！！！
-	html5up.net | @n33co
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>Piano++</title>
-		<meta charset="utf-8" />
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Piano++</title>
+  <% include _header %>
+  <% include _mobile %>
+</head>
+<body>
+  <div id="logoContainer"></div>
 
-	</head>
-	<body >
-		<p>Hello world</p>
-	</body>
+  <div class="container">
+
+    <div id="insideContainer">
+      <h1>Welcome to <b>Piano++</b></h1>
+       <h5>An interactive realtime musical experience</h5>
+       <div id="roomContainer">
+        <form>
+        <input id="roomName" class="std-input-text" type="text" placeholder="Enter a room name"/>
+        </form>
+         <a href="#" id="submitButton" class="btn-standard actionButton">Join</a>
+
+        <div id="infoBox">
+
+            <p>This project is open-sourced on <a href="https://github.com/PatNeedham/PianoPlusPlus">Github</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <% include _vendor %>
+  <link rel="stylesheet" href="/css/index.css" />
+  <script src="/smartbanner/jquery.smartbanner.js"></script>
+  <script src="/js/index.js" type="text/javascript"></script>
+  <% include _analytics %>
+</body>
 </html>
