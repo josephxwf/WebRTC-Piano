@@ -54,7 +54,7 @@ app.get('/chooseroom', function(req, res){
 app.get('/db', function (request, response) {
   pg.connect(process.env.DATABASE_URL, function(err, client, done) {
   client.query("CREATE TABLE IF NOT EXISTS test_table(firstname varchar(64), lastname varchar(64))");
-  client.query("DELETE * FROM test_table");
+  client.query("DELETE FROM test_table");
   client.query("INSERT INTO test_table(firstname, lastname) values($1, $2)", ['Ronald', 'McDonald']);
   client.query("INSERT INTO test_table(firstname, lastname) values($1, $2)", ['Mayor', 'McCheese']);
 
