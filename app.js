@@ -57,7 +57,7 @@ app.get('/db', function (request, response) {
   client.query("INSERT INTO test_table(firstname, lastname) values($1, $2)", ['Ronald', 'McDonald']);
   client.query("INSERT INTO test_table(firstname, lastname) values($1, $2)", ['Mayor', 'McCheese']);
 
-  client.query("SELECT firstname, lastname FROM test_table ORDER BY lastname, firstname");
+  //client.query("SELECT firstname, lastname FROM test_table ORDER BY lastname, firstname");
     client.query('SELECT * FROM test_table', function(err, result) {
       done();
       if (err)
