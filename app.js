@@ -53,9 +53,9 @@ app.get('/chooseroom', function(req, res){
 
 app.get('/db', function (request, response) {
   pg.connect(process.env.DATABASE_URL, function(err, client, done) {
-  client.query("CREATE TABLE IF NOT EXISTS test_table(firstname varchar(64), lastname varchar(64))");
-  client.query("INSERT INTO test_table(firstname, lastname) values($1, $2)", ['Ronald', 'McDonald']);
-  client.query("INSERT INTO test_table(firstname, lastname) values($1, $2)", ['Mayor', 'McCheese']);
+  //client.query("CREATE TABLE IF NOT EXISTS test_table(firstname varchar(64), lastname varchar(64))");
+  //client.query("INSERT INTO test_table(firstname, lastname) values($1, $2)", ['Ronald', 'McDonald']);
+  //client.query("INSERT INTO test_table(firstname, lastname) values($1, $2)", ['Mayor', 'McCheese']);
 
   //client.query("SELECT firstname, lastname FROM test_table ORDER BY lastname, firstname");
     client.query('SELECT * FROM test_table', function(err, result) {
